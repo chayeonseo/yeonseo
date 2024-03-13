@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.home-view{
+    margin: 0 auto;
+    width: 70%;
+    height: 100%;
+    background-color: aliceblue;
+}
+
+.header{
+    width: 100%;
+}
+
+.header-upper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-wrapper{
+    display: flex;
+}
+
+.start-project-btn{
+    background-color: beige;
+    width: 130px;
+    height: 30px;
+    text-align: center;
+}
+
+.user-button > a {
+    display: none;
+}
+
+.categories{
+    display: flex;
+}
+
+#header-fixed{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-top-section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-content{
+    width: 65%;
+    height: 100%;
+    position: relative;
+}
+
+.ad-section{
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    background-color: aqua;
+
+}
+
+
+.advertisement{
+    background-color: darkgray;
+    margin: 10px 10px;
+    width: 95%;
+    height: 90%;
+}
+
+.recommend-section{
+    margin-top: 100px;
+    height: 50%;
+    width: 100%;
+    background-color: fuchsia;
+}
+
+.popular-content{
+    background-color: blueviolet;
+    width: 30%;
+}
+
+.popular-content-title{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
