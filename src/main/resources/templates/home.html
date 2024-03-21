@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>home</title>
-    <link rel="stylesheet" href="../static/CSS/home.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <script src="../static/js/home.js" defer></script>
+    <link rel="stylesheet" href="../static/CSS/home.css" >
 
-</head>
 <body>
     <div class="home-view">
         <div class="header">
@@ -29,7 +30,7 @@
             </div>
             <div id="header-fixed">
                 <div class="categories">
-                    <div id="category-bar">바</div>
+                    <a id="category-bar"><i class="fi fi-br-menu-burger"></i></a>
                     <div id="category-home">홈</div>
                     <div id="category-popular">인기</div>
                     <div id="category-new">신규</div>
@@ -47,15 +48,24 @@
                         <div class="main-content">
                             <div class="ad-section">
                                 <div class="advertisement">
-    <!--                                <div class="swiper-slide">Slide 1</div>-->
-    <!--                                <div class="swiper-slide">Slide 2</div>-->
-    <!--                                <div class="swiper-slide">Slide 3</div>-->
+
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide">
+                                            <img src="/image/christmas_15.jpg">
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <img src="/image/christmas_16.jpg">
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <img src="/image/christmas_17.jpg">
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <img src="/image/christmas_18.jpg">
+                                        </li>
+                                    </ul>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
                                 </div>
-    <!--                            <div class="swiper-pagination"></div>-->
-    <!--                            <div class="ad-swiper">-->
-    <!--                                <div class="swiper-button-prev"></div>-->
-    <!--                                <div class="swiper-button-next"></div>-->
-    <!--                            </div>-->
 
                             </div>
                             <div class="recommend-section">

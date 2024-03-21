@@ -2,22 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../static/js/login.js" defer></script>
+    <link rel="stylesheet" href="../static/CSS/login.css" >
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
 </head>
 <body>
-    <section>
-        <div>
-            <div class="login-title">로그인</div>
-            <div>
-                <input class="login-input" type="text" placeholder="아이디 입력">
-                <input class="login-input" type="text" placeholder="비밀번호 입력">
+    <section class="login-view">
+        <div class="header">
+            <div class="header-wrapper">
+                <div class="header-upper">
+                    <div class="logo-wrapper"></div>
+                    <div class="user-wrapper">
+                        <button class="start-project-btn">프로젝트 시작</button>
+                        <button class="login-btn">로그인 하기</button>
+                        <div class="user-button-wrapper">
+                            <div class="user-button">
+                                <a href=""><img src="../image/heart.png"/></a>
+                                <a href=""><img src="../image/user.png"/></a>
+                                <a href=""><img src="../image/customer-support.png"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <a href="">로그인 정보를 잊으셨나요?</a>
+            <div id="header-fixed">
+                <div class="categories">
+                    <a id="category-bar"><i class="fi fi-br-menu-burger"></i></a>
+                    <div id="category-home">홈</div>
+                    <div id="category-popular">인기</div>
+                    <div id="category-new">신규</div>
+                    <div id="category-closing">마감임박</div>
+                </div>
+                <div class="search-section">
+                    <input type="text">
+                    <button id="search-btn">검색</button>
+                </div>
+            </div>
         </div>
-        <div class="easy-login">
-            <div>이메일</div>
-            <div>네이버</div>
-            <div>카카오</div>
+        <div class="login-main">
+            <form class="wrap" th:action="@{/user/login}" method="post">
+                <h3>LOGIN</h3>
+                <div class="input_wrap">
+                    <input class="login_input" type="text" th:name="username" placeholder="ID / phone_number"/>
+                    <input class="login_input" type="password" th:name="password" placeholder="password"/>
+                    <input class="login_btn" type="button" value="LOGIN">
+                    <div class="forget">
+                        <a th:href="@{/user/find}">아이디/패스워드를 까먹었어요..</a><br>
+                    </div>
+                </div>
+
+                <div class="login_path">
+                    <a th:href="@{/oauth2/authorization/kakao}" ><img id="kakao" th:src="@{/image/kakao_login_medium_narrow.png}" src="../../static/image/kakao_login_medium_narrow.png"/></a>
+                    <a th:href="@{/oauth2/authorization/google}" ><img id="google" th:src="@{/image/google_login.png}" src="../../static/image/google_login.png"/></a>
+                </div>
+                <div class="login_path">
+                    <a th:href="@{/oauth2/authorization/naver}" ><img id="naver" th:src="@{/image/btnG_완성형.png}" src="../../static/image/btnG_완성형.png"/></a>
+                    <a href="join.html"><button id="join">회원가입하기</button></a>
+                </div>
+            </form>
         </div>
     </section>
 </body>

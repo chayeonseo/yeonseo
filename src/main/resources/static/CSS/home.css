@@ -3,9 +3,6 @@
     padding: 0;
 }
 
-body{
-}
-
 .home-view{
     margin: 0 auto;
     width:70%;
@@ -16,7 +13,7 @@ body{
 .header{
     padding-top: 20px;
     width: 100%;
-    height: 80px;
+    height: 100px;
     background-color: #ddf0f5;
 }
 
@@ -66,25 +63,54 @@ body{
     height: 25px;
 }
 
-.categories{
-    display: flex;
-}
-
 #header-fixed{
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
 }
 
 .categories{
     margin-left: 30px;
-    width: 40%;
+    width: 500px;
+    height: 40px;
     display: flex;
     justify-content: space-between;
 }
 
+#category-bar{
+    width: 30px;
+    border: none;
+}
+
+#category-bar > i{
+    font-size: 1.6rem;
+}
+
 .categories > div {
-    width: 18%;
-    background-color: #bac4cb;
+    width: 80px;
+    border-bottom: 2px solid black;
+}
+
+#search-btn{
+    margin-left: 15px;
+    height: 30px;
+    border: none;
+    width: 80px;
+    font-size: 1.3rem;
+}
+
+.search-section{
+    display: flex;
+    width: 300px;
+    height: 40px;
+}
+
+.search-section > input{
+    top: 0;
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
 }
 
 .home-wrapper{
@@ -101,19 +127,37 @@ body{
 
 .main-content{
     display: block;
-    width: 68%;
+    width: 70%;
     overflow: hidden;
 }
 
 .ad-section{
-    padding: 20px 20px;
     height: 30%;
     width: auto;
     border: 0.3px solid blueviolet;
 }
 
+.ad-section.ad {
+    padding: 0;
+}
+
+.advertisement .swiper-button-next,
+.advertisement .swiper-button-prev {
+    color: rgba(255, 255, 255, 0.91);
+}
+.swiper-slide {
+    overflow: hidden;
+}
+.swiper-slide img {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 .advertisement{
+    position: relative;
     border: 0.1px solid black;
     width: 100%;
     height: 100%;
@@ -195,7 +239,6 @@ body{
 
 .popular-card-wrapper{
     padding: 5px 5px 0 5px;
-    /*height: 100%;*/
     display: flex;
     flex-direction: column;
 }
