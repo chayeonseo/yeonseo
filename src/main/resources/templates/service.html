@@ -3,42 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="../static/CSS/service.css">
 </head>
 <body>
-    <section>
-        <div class="service">
-            <div class="title">고객센터</div>
-            <div class="categories">
-                <div class="question">
-                    <div class="icon"></div>
-                    <div>문의사항 남기기</div>
+    <section class="service-view">
+        <div class="header">
+            <div class="header-wrapper">
+                <div class="header-upper">
+                    <div class="logo-wrapper"></div>
+                    <div class="user-wrapper">
+                        <button class="start-project-btn">프로젝트 시작</button>
+                        <button class="login-btn">로그인 하기</button>
+                        <div class="user-button-wrapper">
+                            <div class="user-button">
+                                <a href=""><img src="../image/heart.png"/></a>
+                                <a href=""><img src="../image/user.png"/></a>
+                                <a href=""><img src="../image/customer-support.png"/></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="frequent-question">
-                    <div class="icon"></div>
-                    <div>자주 묻는 질문</div>
+            </div>
+            <div id="header-fixed">
+                <div class="categories">
+                    <div id="category-bar">바</div>
+                    <div id="category-home">홈</div>
+                    <div id="category-popular">인기</div>
+                    <div id="category-new">신규</div>
+                    <div id="category-closing">마감임박</div>
                 </div>
-                <div class="call">
-                    <div class="icon"></div>
-                    <div>직접 전화하기</div>
+                <div class="search-section">
+                    <input type="text">
+                    <button id="search-btn">검색</button>
                 </div>
             </div>
         </div>
-        <div class="notion">
-            <div class="title">공지사항</div>
-            <div class="notion-box">
-                <div class="notion-title"></div>
-                <div class="notion-writer"></div>
-                <div class="notion-date"></div>
+        <div class="main-content">
+            <div class="service">
+                <div class="title">고객센터</div>
+                <div class="categories2">
+                    <div class="question">
+                        <div class="icon">
+                            <img src="/image/img_1.png">
+                        </div>
+                        <div class="service-text">문의사항 남기기</div>
+                    </div>
+                    <div class="frequent-question">
+                        <div class="icon">
+                            <img src="/image/img_2.png">
+                        </div>
+                        <div class="service-text">자주 묻는 질문</div>
+                    </div>
+                    <div class="call">
+                        <div class="icon">
+                            <img src="/image/img_3.png">
+                        </div>
+                        <div class="service-text">직접 전화하기</div>
+                    </div>
+                </div>
             </div>
-            <div class="notion-box">
-                <div class="notion-title"></div>
-                <div class="notion-writer"></div>
-                <div class="notion-date"></div>
-            </div>
-            <div class="notion-box">
-                <div class="notion-title"></div>
-                <div class="notion-writer"></div>
-                <div class="notion-date"></div>
+            <div class="notion">
+                <div class="title">공지사항</div>
+                <div class="notions">
+                    <div class="notion-box">
+                        <div class="notion-title">안내사항</div>
+                        <div class="notion-writer">차연서</div>
+                        <div class="notion-date">2024-01-01</div>
+                    </div>
+                    <div class="notion-box">
+                        <div class="notion-title">안내사항</div>
+                        <div class="notion-writer">차연서</div>
+                        <div class="notion-date">2024-01-01</div>
+                    </div>
+                    <div class="notion-box">
+                        <div class="notion-title">안내사항</div>
+                        <div class="notion-writer">차연서</div>
+                        <div class="notion-date">2024-01-01</div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
