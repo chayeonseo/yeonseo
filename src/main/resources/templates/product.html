@@ -2,15 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>home</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="../static/js/login.js" defer></script>
-    <link rel="stylesheet" href="../static/CSS/login.css" >
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/CSS/product.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+
 </head>
 <body>
-    <section class="login-view">
+    <div class="main-view">
         <div class="header">
             <div class="header-wrapper">
                 <div class="header-upper">
@@ -31,7 +29,7 @@
             <div id="header-fixed">
                 <div class="categories">
                     <div class="cate-con">
-                        <div id="category-bar"><i class="fi fi-br-menu-burger"></i></div>
+                        <div id="category-bar">바</div>
                         <div class="category-select">
                             <div class="select-box">
                                 <div>
@@ -79,7 +77,8 @@
 
                             </div>
                         </div>
-                    </div>                    <div id="category-home">홈</div>
+                    </div>
+                    <div id="category-home">홈</div>
                     <div id="category-popular">인기</div>
                     <div id="category-new">신규</div>
                     <div id="category-closing">마감임박</div>
@@ -90,28 +89,30 @@
                 </div>
             </div>
         </div>
-        <div class="login-main">
-            <form class="wrap" th:action="@{/user/login}" method="post">
-                <h3>LOGIN</h3>
-                <div class="input_wrap">
-                    <input class="login_input" type="text" th:name="username" placeholder="ID / phone_number"/>
-                    <input class="login_input" type="password" th:name="password" placeholder="password"/>
-                    <input class="login_btn" type="button" value="LOGIN">
-                    <div class="forget">
-                        <a th:href="@{/user/find}">아이디/패스워드를 까먹었어요..</a><br>
+        <div class="main-content">
+            <div class="top-product">
+                <div class="product-img"></div>
+                <div class="product-info">
+                    <div class="product-title">[고양이의 하루]</div>
+                    <div class="product-sum">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa집사가 내는 소리에 집중하고 대답해주는 수다냥이! 야옹 이외에도 purring(골골송), trilling 등의 긍정음을 자주 낸다면? 우리집 고양이가 행복하다는 증거로 볼 수 있어요.</div>
+                    <div class="product-price"><span>10,000</span> <span>원</span></div>
+                    <div class="product-member"><span>100</span> <span>명 달성 !</span></div>
+                    <div>
+                        <span class="reward-title">리워드</span>
+                        <span class="reward-info">3번쨰 구매자까지 드리는 혜택</span><br>
                     </div>
+                    <button class="join">멤버로 참여하기</button>
                 </div>
-
-                <div class="login_path">
-                    <a th:href="@{/oauth2/authorization/kakao}" ><img id="kakao" th:src="@{book}" src="../../static/image/kakao_login_medium_narrow.png"/></a>
-                    <a th:href="@{/oauth2/authorization/google}" ><img id="google" th:src="@{book}" src="../../static/image/google_login.png"/></a>
+            </div>
+            <div class="detail-section">
+                <div class="title">제품 상세정보</div>
+                <div class="info">
+                    도서산간에 해당하는 멤버님은 반드시 메이커에게 문의 후 참여해주세요
                 </div>
-                <div class="login_path">
-                    <a th:href="@{/oauth2/authorization/naver}" ><img id="naver" th:src="@{book}" src="../../static/image/btnG_완성형.png"/></a>
-                    <a href="join.html"><button id="join">회원가입하기</button></a>
+                <div class="product-detail">
                 </div>
-            </form>
+            </div>
         </div>
-    </section>
+    </div>
 </body>
 </html>

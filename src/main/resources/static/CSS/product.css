@@ -3,11 +3,12 @@
     padding: 0;
 }
 
-.service-view{
+.main-view{
     margin: 0 auto;
     width:70%;
     height: auto;
     background-color: aliceblue;
+    padding-bottom: 50px;
 }
 
 .header{
@@ -72,7 +73,7 @@
 .categories{
     margin-left: 30px;
     width: 500px;
-    height: 40px;
+    height: 30px;
     display: flex;
     justify-content: space-between;
 }
@@ -80,7 +81,9 @@
 #category-bar{
     width: 30px;
     border: none;
+    padding-bottom: 10px;
 }
+
 
 #category-bar > i{
     font-size: 1.6rem;
@@ -136,6 +139,7 @@
 
 .categories > div {
     width: 80px;
+    height: 30px;
     border-bottom: 2px solid black;
 }
 
@@ -162,103 +166,128 @@
 }
 
 .main-content{
-    padding-top: 50px;
-    display: flex;
-    justify-content: space-evenly;
-    margin: 30px auto;
-    height: 450px;
-    width: 80%;
-    border: 1px solid black;
+    margin: 0 auto;
+    width: 70%;
+    background-size: cover;
+    padding-bottom: 30px;
 }
 
-.service{
-    width: 40%;
-    height: 250px;
+.top-product{
+    margin-top: 30px;
+    display: flex;
+}
+
+.product-img{
+    width: 500px;
+    height: 300px;
+    background-image: url("/image/main.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.product-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 400px;
+    height: 300px;
+    margin-left: 30px;
+}
+
+
+.product-title{
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-sum{
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 100px;
+    background-color: rgba(231, 231, 231, 0.59);
+    overflow: auto;
+}
+
+.product-sum::-webkit-scrollbar{
+    width: 5px;
+    background-color: #ffffff;
+}
+
+.product-sum::-webkit-scrollbar-thumb{
+    width: 1px;
+    background-color: #939292;
+}
+
+.product-price{
+    margin-top: 10px;
+}
+
+.product-price, .product-member > span{
+    font-size: 1.4rem;
+}
+
+.product-price > span+span, .product-member > span+span{
+    font-size: 1rem;
+}
+
+.reward-title{
+    color: #a8a8a8;
+    font-size: 0.8rem;
+}
+
+.reward-info{
+    font-size: 0.9rem;
+}
+
+.join{
+    width: 400px;
+    height: 40px;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #89abc4;
+    color: white;
+}
+
+.detail-section{
+    width: 70%;
+    margin: 0 auto;
+    height: auto;
 }
 
 .title{
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 10px;
     margin-bottom: 10px;
-    font-weight: bold;
 }
 
-.service{
-    background-color: #fae4e4;
-    height: 80%;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    padding: 20px 20px;
-}
-
-.categories2 > div {
-    width: 80%;
-    margin-top: 40px;
-    margin-left: 30px;
-    background-color: #dbdbdb;
-    padding: 10px 10px;
-}
-
-.question, .frequent-question, .call{
+.info{
     text-align: center;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
+    padding-top: 13px;
+    margin: auto;
+    width: 90%;
+    height: 35px;
+    background-color: rgba(140, 140, 140, 0.26);
+    border-radius: 50px;
 }
 
-.service-text{
-    font-size: 1.3rem;
-    width: 60%;
+.product-detail{
+    width: 90%;
+    background-color: #d1efff;
+    margin: 30px auto;
+    height: 3000px;
+    background-image: url("/image/detail.jpg");
+    border-image-width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
 }
-
-.icon{
-    width: 20%;
-}
-
-.icon > img{
-    width: 30px;
-    height: 30px;
-}
-
-.notion{
-    background-color: #fae4e4;
-    height: 80%;
-    width: 40%;
-    padding: 20px 20px;
-}
-
-.notions{
-    display: flex;
-    flex-direction: column;
-}
-
-.notion-box{
-    background-color: #bdbdbd;
-    width: 80%;
-    height: 30%;
-    margin-top: 15px;
-    margin-left: 30px;
-    padding: 10px 10px;
-}
-
-.notion-title{
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.notion-writer{
-    margin-top: 5px;
-    font-size: 0.8rem;
-    color: #ffffff;
-}
-
-.notion-date{
-    margin-top: 5px;
-    font-size: 0.6rem;
-    font-weight: bold;
-    text-align: right;
-}
-
 
 
 

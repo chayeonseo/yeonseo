@@ -3,11 +3,12 @@
     padding: 0;
 }
 
-.service-view{
+.product-view{
     margin: 0 auto;
     width:70%;
     height: auto;
     background-color: aliceblue;
+    padding-bottom: 50px;
 }
 
 .header{
@@ -162,103 +163,104 @@
 }
 
 .main-content{
-    padding-top: 50px;
-    display: flex;
-    justify-content: space-evenly;
-    margin: 30px auto;
-    height: 450px;
-    width: 80%;
-    border: 1px solid black;
-}
+    width: 70%;
+    margin: 0 auto;
 
-.service{
-    width: 40%;
-    height: 250px;
 }
 
 .title{
-    font-size: 1.6rem;
-    margin-bottom: 10px;
+    margin-top: 30px;
+    font-size: 2.3rem;
     font-weight: bold;
 }
 
-.service{
-    background-color: #fae4e4;
-    height: 80%;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    padding: 20px 20px;
-}
-
-.categories2 > div {
-    width: 80%;
-    margin-top: 40px;
-    margin-left: 30px;
-    background-color: #dbdbdb;
-    padding: 10px 10px;
-}
-
-.question, .frequent-question, .call{
-    text-align: center;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-}
-
-.service-text{
-    font-size: 1.3rem;
-    width: 60%;
-}
-
-.icon{
-    width: 20%;
-}
-
-.icon > img{
-    width: 30px;
-    height: 30px;
-}
-
-.notion{
-    background-color: #fae4e4;
-    height: 80%;
-    width: 40%;
-    padding: 20px 20px;
-}
-
-.notions{
-    display: flex;
-    flex-direction: column;
-}
-
-.notion-box{
-    background-color: #bdbdbd;
-    width: 80%;
-    height: 30%;
+.sub-title{
     margin-top: 15px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-basic-info{
     margin-left: 30px;
-    padding: 10px 10px;
 }
 
-.notion-title{
-    font-size: 1.2rem;
-    font-weight: bold;
+.product-basic-info > div + div{
+    margin-bottom: 5px;
+    margin-left: 10px;
 }
 
-.notion-writer{
-    margin-top: 5px;
-    font-size: 0.8rem;
-    color: #ffffff;
+select{
+    width: 200px;
+    height: 20px;
+    border: none;
+    margin-top: 3px;
 }
 
-.notion-date{
-    margin-top: 5px;
+input{
+    width: 200px;
+    height: 20px;
+    margin-top: 3px;
+    border: none;
+}
+
+.product-deliver-section > input::placeholder{
     font-size: 0.6rem;
-    font-weight: bold;
-    text-align: right;
+    text-align: center;
+}
+
+
+.image-input, #image-input{
+    width: 50px;
+    height: 25px;
+}
+
+.product-detail-section > input{
+    width: 600px;
+    height: 200px;
 }
 
 
 
+.product-summary-section > input{
+    width: 600px;
+    height: 130px;
+}
+
+.must{
+    color: red;
+}
+
+.reward{
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.info{
+    color: #696969;
+    font-size: 0.8rem;
+    margin-bottom: 3px;
+}
+
+.reward > input{
+    margin-top: 5px;
+    width: 600px;
+    height: 130px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+.reward > input::placeholder{
+    text-align: center;
+}
+
+.reward > div + div{
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+span{
+    font-weight: bold;
+}
 

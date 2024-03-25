@@ -2,15 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>home</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="../static/js/login.js" defer></script>
-    <link rel="stylesheet" href="../static/CSS/login.css" >
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/CSS/product-register.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+
 </head>
 <body>
-    <section class="login-view">
+    <div class="product-view">
         <div class="header">
             <div class="header-wrapper">
                 <div class="header-upper">
@@ -90,28 +88,66 @@
                 </div>
             </div>
         </div>
-        <div class="login-main">
-            <form class="wrap" th:action="@{/user/login}" method="post">
-                <h3>LOGIN</h3>
-                <div class="input_wrap">
-                    <input class="login_input" type="text" th:name="username" placeholder="ID / phone_number"/>
-                    <input class="login_input" type="password" th:name="password" placeholder="password"/>
-                    <input class="login_btn" type="button" value="LOGIN">
-                    <div class="forget">
-                        <a th:href="@{/user/find}">아이디/패스워드를 까먹었어요..</a><br>
-                    </div>
+        <div class="main-content">
+            <div class="title">프로젝트 등록</div>
+            <div class="product-basic-info">
+                <div class="sub-title">제품정보</div>
+                <div class="category-select-section">
+                    <div  style="font-weight: bold;">카테고리 선택</div>
+                    <select>
+                        <option selected hidden="hidden">카테고리 선택</option>
+                        <option>테크/가전</option>
+                        <option>뷰티</option>
+                        <option>홈/리빙</option>
+                        <option>아웃도어</option>
+                        <option>푸드</option>
+                        <option>도서</option>
+                        <option>반려동물</option>
+                        <option>키즈</option>
+                        <option>게임</option>
+                    </select>
                 </div>
-
-                <div class="login_path">
-                    <a th:href="@{/oauth2/authorization/kakao}" ><img id="kakao" th:src="@{book}" src="../../static/image/kakao_login_medium_narrow.png"/></a>
-                    <a th:href="@{/oauth2/authorization/google}" ><img id="google" th:src="@{book}" src="../../static/image/google_login.png"/></a>
+                <div class="product-name-section">
+                    <div><span>제품이름</span> <span class="must">*</span></div>
+                    <input type="text" style="text-align: right">
                 </div>
-                <div class="login_path">
-                    <a th:href="@{/oauth2/authorization/naver}" ><img id="naver" th:src="@{book}" src="../../static/image/btnG_완성형.png"/></a>
-                    <a href="join.html"><button id="join">회원가입하기</button></a>
+                <div class="product-tbimg-section">
+                    <div><span>대표이미지(1개)</span> <span class="must">*</span></div>
+                    <input type="image" class="image-input">
                 </div>
-            </form>
+                <div class="product-price-section">
+                    <div><span>제품가격</span> <span class="must">*</span></div>
+                    <input type="text" style="text-align: right"> 원
+                </div>
+                <div class="product-deliver-section">
+                    <div><span>배송비</span> <span class="must">*</span></div>
+                    <input type="text" style="text-align: right" placeholder="무료배송(0원)일 경우 0원 작성 필요"> 원
+                </div>
+                <div class="product-detail-section">
+                    <div><span>프로젝트 상세정보 (이미지 또는 글)</span> <span class="must">*</span></div>
+                    <input type="text"><br>
+                    <input type="image" id="image-input">
+                </div>
+                <div class="project-img-section">
+                    <div  style="font-weight: bold;">프로젝트 상세 이미지(최대 10개)</div>
+                    <input type="image" class="image-input">
+                </div>
+                <div class="product-goal-section">
+                    <div><span>목표인원</span> <span class="must">*</span></div>
+                    <input type="text" style="text-align: right"> 명
+                </div>
+                <div class="product-summary-section">
+                    <div  style="font-weight: bold;">프로젝트 요약</div>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="reward">
+                <div class="sub-title">리워드정보</div>
+                <div class="info">제품의 성공률을 높이기 위한 방법! 리워드를 설계하세요!</div>
+                <div class="info">선착순으로 특정 혜택을 제공하거나 사은품을 증정하게 된다면 우연한 방문을 결제로 이끌 수 있습니다 (얼리버드 혜택)</div>
+                <input type="text" placeholder="리워드 혜택 작성">
+            </div>
         </div>
-    </section>
+    </div>
 </body>
 </html>

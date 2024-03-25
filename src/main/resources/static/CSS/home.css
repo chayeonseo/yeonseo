@@ -33,7 +33,7 @@
     background-color: #fae4e4;
     width: 300px;
     height: 30px;
-    background-image: url("image/logo.png");
+    background-image: url("../../image/logo.png");
 }
 
 .start-project-btn{
@@ -84,6 +84,54 @@
 
 #category-bar > i{
     font-size: 1.6rem;
+}
+
+.cate-con:hover{
+    cursor: pointer;
+    .category-select{
+        display: block;
+    }
+}
+
+.category-select{
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background-color: #f5fbff;
+    padding-top: 10px;
+    display: none;
+}
+
+.category-select:hover{
+    cursor: pointer;
+    display: block;
+}
+
+.select-box{
+    text-align: center;
+    font-weight: bold;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-evenly;
+    height: 30%;
+}
+
+.select-box > div{
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 30%;
+    height: 100%;
+}
+
+.select-box > div > div {
+    margin-top: 10px;
+    height: 20%;
+}
+
+.select-box > div > img {
+    margin-top: 20px;
+    height: 60%;
+    width: 60%;
 }
 
 .categories > div {
