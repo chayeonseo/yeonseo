@@ -1,0 +1,46 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yeonseo.mapper.UserMapper">
+
+    <resultMap id="get_project" type="projectDTO" autoMapping="true">
+        <id property="id" column="project_id"/>
+        <association property="category" javaType="CategoryDTO">
+            <id property="name" column="category_name" />
+        </association>
+
+        <association property="createUser" javaType="UserDTO" autoMapping="true">
+            <id property="id" column="create_user_id"/>
+            <result  property="name" column="create_user_name" />
+        </association>
+
+        <collection property="details" ofType="ProjectDetailDTO" javaType="list">
+            <id property="no" column="no"/>
+            <result property="detail" column="detail"/>
+            <result property="order" column="order"/>
+        </collection>
+
+        <collection property="members" ofType="UserDTO" javaType="list" autoMapping="true">
+            <id property="id" column="member_user_id"/>
+            <result  property="name" column="member_user_name" />
+        </collection>
+    </resultMap>
+
+    <select id="get_project" resultMap="get_project">
+        SELECT * FROM project P
+            inner join category C
+            on P.category_id = C.id
+            inner join user U
+            on P.create_user = U.id
+            left outer join details D
+            on P.id = D.project_id
+            left outer join member M
+            on P.id = M.project_id
+            left outer join user MU
+            on MU.id = M.user_id
+        where p.id = #{projectId}
+        order by D.order;
+    </select>
+
+
+</mapper>

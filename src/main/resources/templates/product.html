@@ -93,10 +93,10 @@
             <div class="top-product">
                 <div class="product-img"></div>
                 <div class="product-info">
-                    <div class="product-title">[고양이의 하루]</div>
-                    <div class="product-sum">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa집사가 내는 소리에 집중하고 대답해주는 수다냥이! 야옹 이외에도 purring(골골송), trilling 등의 긍정음을 자주 낸다면? 우리집 고양이가 행복하다는 증거로 볼 수 있어요.</div>
-                    <div class="product-price"><span>10,000</span> <span>원</span></div>
-                    <div class="product-member"><span>100</span> <span>명 달성 !</span></div>
+                    <div class="product-title" th:text="${project.title}">[고양이의 하루]</div>
+                    <div class="product-sum"  th:text="${project.summary}">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa집사가 내는 소리에 집중하고 대답해주는 수다냥이! 야옹 이외에도 purring(골골송), trilling 등의 긍정음을 자주 낸다면? 우리집 고양이가 행복하다는 증거로 볼 수 있어요.</div>
+                    <div class="product-price"  th:text="${project.price}"><span>10,000</span> <span>원</span></div>
+                    <div class="product-member"><span  th:text="${project.memberNum}">100</span> <span>명 달성 !</span></div>
                     <div>
                         <span class="reward-title">리워드</span>
                         <span class="reward-info">3번쨰 구매자까지 드리는 혜택</span><br>
@@ -109,7 +109,7 @@
                 <div class="info">
                     도서산간에 해당하는 멤버님은 반드시 메이커에게 문의 후 참여해주세요
                 </div>
-                <div class="product-detail">
+                <div class="product-detail" th:text="${project.details}">
                 </div>
             </div>
         </div>
