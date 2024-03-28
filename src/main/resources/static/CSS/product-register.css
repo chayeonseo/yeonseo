@@ -34,7 +34,7 @@
     background-color: #fae4e4;
     width: 300px;
     height: 30px;
-    background-image: url("../../image/logo.png");
+    background-image: url("../image/logo.png");
 }
 
 .start-project-btn{
@@ -211,7 +211,7 @@ input{
 
 
 .image-input, #image-input{
-    width: 50px;
+    width: 150px;
     height: 25px;
 }
 

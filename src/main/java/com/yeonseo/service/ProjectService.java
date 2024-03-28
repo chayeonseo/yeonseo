@@ -12,7 +12,14 @@ import java.util.List;
 public class ProjectService {
     @Autowired
     ProjectMapper projectMapper;
+
+    private List<ProjectDTO> view_project(){return projectMapper.view_project();};
+
     public ProjectDTO get_project(int projectId){
         return projectMapper.get_project(projectId);
+    }
+
+    public void like_project(int projectId, String userId){
+        projectMapper.like_project(projectId, userId);
     }
 }

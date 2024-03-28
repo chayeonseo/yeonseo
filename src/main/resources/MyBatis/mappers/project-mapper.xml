@@ -1,7 +1,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yeonseo.mapper.UserMapper">
+<mapper namespace="com.yeonseo.mapper.ProjectMapper">
 
     <resultMap id="get_project" type="projectDTO" autoMapping="true">
         <id property="id" column="project_id"/>
@@ -42,5 +42,9 @@
         order by D.order;
     </select>
 
+    <insert id="like_project" >
+        INSERT INTO `liked_product` (`project_id`, `user_id`)
+        VALUES ('#{project_id}', '#{user_id}');
+    </insert>
 
 </mapper>

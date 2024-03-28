@@ -34,7 +34,7 @@
     background-color: #fae4e4;
     width: 300px;
     height: 30px;
-    background-image: url("../../image/logo.png");
+    background-image: url("../image/logo.png");
 }
 
 .start-project-btn{
@@ -180,7 +180,7 @@
 .product-img{
     width: 500px;
     height: 300px;
-    background-image: url("/image/main.jpg");
+    background-image: url("/static/image/main.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -243,8 +243,25 @@
     font-size: 0.9rem;
 }
 
+.btn-container{
+    margin-top: 10px;
+    display: flex;
+}
+
+.like-btn{
+    border: none;
+    width: 50px;
+    margin-right: 10px;
+
+}
+
+.like-btn > i{
+    font-size: 1.6rem;
+    filter: invert(25%) sepia(98%) saturate(3782%) hue-rotate(336deg) brightness(105%) contrast(121%);
+}
+
 .join{
-    width: 400px;
+    width: 350px;
     height: 40px;
     border: none;
     font-size: 1.2rem;
@@ -282,7 +299,7 @@
     background-color: #d1efff;
     margin: 30px auto;
     height: 3000px;
-    background-image: url("/image/detail.jpg");
+    background-image: url("/static/image/detail.jpg");
     border-image-width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
