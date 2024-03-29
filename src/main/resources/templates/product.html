@@ -35,43 +35,44 @@
                         <div class="category-select">
                             <div class="select-box">
                                 <div>
-                                    <img src="../static/image/tech.png"/>
+                                    <img th:src="@{/image/tech.png}"/>
                                     <div>테크/가전</div>
                                 </div>
                                 <div>
-                                    <img src="../static/image/beauty.png"/>
+                                    <img th:src="@{/image/beauty.png}" />
                                     <div>뷰티</div>
                                 </div>
                                 <div>
-                                    <img src="../static/image/living.png"/>
+                                    <img th:src="@{/image/living.png}"/>
                                     <div>홈/리빙</div>
                                 </div>
                             </div>
                             <div class="select-box">
                                 <div>
-                                    <img src="../static/image/outdoor.png"/>
+                                    <img th:src="@{/image/outdoor.png}"/>
                                     <div>아웃도어</div>
                                 </div>
                                 <div>
-                                    <img src="../static/image/food.png"/>
+                                    <img th:src="@{/image/food.png}"/>
                                     <div>푸드</div>
                                 </div>
                                 <div>
-                                    <img src="../static/image/book.png"/>
+                                    <img th:src="@{/image/book.png}"/>
                                     <div>도서</div>
                                 </div>
                             </div>
                             <div class="select-box">
                                 <div>
-                                    <img src="../static/image/pet.png"/>
+                                    <img th:src="@{/image/pet.png}"
+                                    />
                                     <div>반려동물</div>
                                 </div>
                                 <div>
-                                    <img src="../static/image/kids.png"/>
+                                    <img th:src="@{/image/kids.png}"/>
                                     <div>키즈</div>
                                 </div>
                                 <div>
-                                    <img src="../static/image/game.png"/>
+                                    <img th:src="@{/image/game.png}"/>
                                     <div>게임</div>
                                 </div>
 
@@ -93,7 +94,7 @@
         </div>
         <div class="main-content">
             <div class="top-product">
-                <div class="product-img" th:style="'background-image: url(\'/img/' + ${project.id} + '/' + ${project.thumbImage} + '\')'"></div>
+                <div class="product-img" th:style="'background-image: url(\'/img/' + ${project.id} + '/' + ${project.thumbImage.no} + '\')'"></div>
                 <div class="product-info">
                     <div class="product-title" th:text="${project.title}">[고양이의 하루]</div>
                     <div class="product-sum"  th:text="${project.summary}">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa집사가 내는 소리에 집중하고 대답해주는 수다냥이! 야옹 이외에도 purring(골골송), trilling 등의 긍정음을 자주 낸다면? 우리집 고양이가 행복하다는 증거로 볼 수 있어요.</div>

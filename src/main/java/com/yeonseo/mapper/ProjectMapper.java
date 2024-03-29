@@ -14,4 +14,6 @@ public interface ProjectMapper {
     ProjectDTO get_project(int projectId);
 
     void like_project(int projectId, String userId);
+
+    void insert_project(ProjectDTO projectDTO);
 }

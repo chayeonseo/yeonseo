@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../static/CSS/product-register.css">
+    <link rel="stylesheet" href="../static/CSS/product-register.css" th:href="@{/CSS/product-register.css}" \>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
-    <script src="../static/js/project-register.js" defer></script>
+    <script src="../static/js/project-register.js" th:src="@{/js/project-register.js}" defer></script>
 
 </head>
 <body>
+<form id="form">
     <div class="product-view">
         <div class="header">
             <div class="header-wrapper">
@@ -19,9 +20,9 @@
                         <button class="login-btn">로그인 하기</button>
                         <div class="user-button-wrapper">
                             <div class="user-button">
-                                <a href=""><img src="../static/image/heart.png"/></a>
-                                <a href=""><img src="../static/image/user.png"/></a>
-                                <a href=""><img src="../static/image/customer-support.png"/></a>
+                                <a href="home.html"><img th:src="@{/image/heart.png}" src="../static/image/heart.png"/></a>
+                                <a href="maker-page.html"><img th:src="@{/image/user.png}"></a>
+                                <a href="service.html"><img th:src="@{/image/customer-support.png}"></a>
                             </div>
                         </div>
                     </div>
@@ -34,43 +35,44 @@
                         <div class="category-select">
                             <div class="select-box">
                                 <div>
-                                    <img src="../static/image/tech.png"/>
+                                    <img th:src="@{/image/tech.png}"/>
                                     <div>테크/가전</div>
                                 </div>
                                 <div>
-                                    <img src="../static/image/beauty.png"/>
+                                    <img th:src="@{/image/beauty.png}" />
                                     <div>뷰티</div>
                                 </div>
                                 <div>
-                                    <img src="../static/image/living.png"/>
+                                    <img th:src="@{/image/living.png}"/>
                                     <div>홈/리빙</div>
                                 </div>
                             </div>
                             <div class="select-box">
                                 <div>
-                                    <img src="../static/image/outdoor.png"/>
+                                    <img th:src="@{/image/outdoor.png}"/>
                                     <div>아웃도어</div>
                                 </div>
                                 <div>
-                                    <img src="../static/image/food.png"/>
+                                    <img th:src="@{/image/food.png}"/>
                                     <div>푸드</div>
                                 </div>
                                 <div>
-                                    <img src="../static/image/book.png"/>
+                                    <img th:src="@{/image/book.png}"/>
                                     <div>도서</div>
                                 </div>
                             </div>
                             <div class="select-box">
                                 <div>
-                                    <img src="../static/image/pet.png"/>
+                                    <img th:src="@{/image/pet.png}"
+                                    />
                                     <div>반려동물</div>
                                 </div>
                                 <div>
-                                    <img src="../static/image/kids.png"/>
+                                    <img th:src="@{/image/kids.png}"/>
                                     <div>키즈</div>
                                 </div>
                                 <div>
-                                    <img src="../static/image/game.png"/>
+                                    <img th:src="@{/image/game.png}"/>
                                     <div>게임</div>
                                 </div>
 
@@ -95,65 +97,70 @@
                 <div class="sub-title">제품정보</div>
                 <div class="category-select-section">
                     <div  style="font-weight: bold;">카테고리 선택</div>
-                    <select>
+                    <select id="category">
                         <option selected hidden="hidden">카테고리 선택</option>
-                        <option>테크/가전</option>
-                        <option>뷰티</option>
-                        <option>홈/리빙</option>
-                        <option>아웃도어</option>
-                        <option>푸드</option>
-                        <option>도서</option>
-                        <option>반려동물</option>
-                        <option>키즈</option>
-                        <option>게임</option>
+                        <option value="1">테크/가전</option>
+                        <option value="2">뷰티</option>
+                        <option value="3">홈/리빙</option>
+                        <option value="4">아웃도어</option>
+                        <option value="5">푸드</option>
+                        <option value="6">도서</option>
+                        <option value="7">반려동물</option>
+                        <option value="8">키즈</option>
+                        <option value="9">게임</option>
                     </select>
                 </div>
                 <div class="product-name-section">
                     <div><span>제품이름</span> <span class="must">*</span></div>
-                    <input type="text" style="text-align: right">
+                    <input id="title" type="text" style="text-align: right">
                 </div>
                 <div class="product-tbimg-section">
                     <div><span>대표이미지(1개)</span> <span class="must">*</span></div>
-                    <input type="file" class="image-input">
+                    <div><input id="thumbImage" type="file" class="image-input"></div>
                 </div>
                 <div class="product-price-section">
                     <div><span>제품가격</span> <span class="must">*</span></div>
-                    <input type="text" style="text-align: right"> 원
+                    <input id="price" type="text" style="text-align: right"> 원
                 </div>
                 <div class="product-deliver-section">
                     <div><span>배송비</span> <span class="must">*</span></div>
-                    <input type="text" style="text-align: right" placeholder="무료배송(0원)일 경우 0원 작성 필요"> 원
+                    <input id="delivery" type="text" style="text-align: right" placeholder="무료배송(0원)일 경우 0원 작성 필요"> 원
                 </div>
                 <div class="product-detail-section">
                     <div><span>프로젝트 상세정보 (이미지 또는 글)</span> <span class="must">*</span></div>
                     <input type="file" id="image-input"><br>
-                    <input type="text" id="detail-text">
-                    <button id="add-details">+</button>
-                    <div class="details-list">
+                    <input type="text" id="detail-text"><br>
+                    <button type="button" id="add-details">추가하기</button>
+                    <div class="details-list" id="list-container">
 
                     </div>
                 </div>
                 <div class="project-img-section">
                     <div  style="font-weight: bold;">기간</div>
-                    시작 날짜 : <input type="date">
-                    마감 날짜 : <input type="date">
+                    <div class="date-select">
+                        <span>시작 날짜 :</span> <input id="startDate" type="date">
+                        <span>마감 날짜 :</span> <input id="endDate" type="date">
+                    </div>
+
                 </div>
                 <div class="product-goal-section">
                     <div><span>목표인원</span> <span class="must">*</span></div>
-                    <input type="text" style="text-align: right"> 명
+                    <input id="goal" type="text" style="text-align: right"> 명
                 </div>
                 <div class="product-summary-section">
                     <div  style="font-weight: bold;">프로젝트 요약</div>
-                    <input type="text">
+                    <input id="summary" type="text">
                 </div>
             </div>
             <div class="reward">
                 <div class="sub-title">리워드정보</div>
                 <div class="info">제품의 성공률을 높이기 위한 방법! 리워드를 설계하세요!</div>
-                <div class="info">선착순으로 특정 혜택을 제공하거나 사은품을 증정하게 된다면 우연한 방문을 결제로 이끌 수 있습니다 (얼리버드 혜택)</div>
-                <input type="text" placeholder="리워드 혜택 작성">
+                <div class="info">선착순으로 혜택을 제공하거나 사은품을 증정한다면 우연한 방문을 결제로 이끌 수 있습니다 (얼리버드 혜택)</div>
+                <input id="reward" type="text" placeholder="리워드 혜택 작성">
             </div>
+            <button id="save" type="button" onclick="submit_data()">저장하기</button>
         </div>
     </div>
+</form>
 </body>
 </html>

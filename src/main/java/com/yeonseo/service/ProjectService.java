@@ -22,4 +22,8 @@ public class ProjectService {
     public void like_project(int projectId, String userId){
         projectMapper.like_project(projectId, userId);
     }
+
+    public void insert_project(ProjectDTO projectDTO){
+        projectMapper.insert_project(projectDTO);
+    };
 }
