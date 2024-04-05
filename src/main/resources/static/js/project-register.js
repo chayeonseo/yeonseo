@@ -66,6 +66,10 @@ function submit_data(){
         projectStatus = 1;
     }
 
+    detailImgObjList.forEach((detailImgObj, index) => {
+        detailImgObj.order = index;
+    });
+
     let data = {
         title: projectTitle.value,
         thumbImage: thumbFileObject,
@@ -79,15 +83,20 @@ function submit_data(){
         details: detailImgObjList,
         status: projectStatus
     }
-    console.log(data)
 
     fetch('/project/insert', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
     })
-        .then(res => res.json())
-        .then(data => console.log(data));
+        .then(res => {
+            if(res.status === 201){
+                alert('등록이 완료되었습니다!');
+                location.href = '/home';
+            }else{
+                alert('문제가 발생했습니다 ㅠㅠ');
+            }
+        });
 }
 
 
@@ -96,26 +105,27 @@ let num = 0;
 addDetailsBtn.onclick = () => {
     if(selectedFileObj !== null) {
         detailImgObjList.push(selectedFileObj);
-        detailContainer.insertAdjacentHTML("beforeend",  `<div className="details-list" style="display: flex ">
-            <div class="index-num"></div>
-            <div>파일명 : ${detailImg.value}</div>
-            <button class="detailDeleteBtn" onclick="delete_obj(this)">삭제</button>
+        detailContainer.insertAdjacentHTML("beforeend",  `<div className="details-list" id="${detailImgObjList.length}" style="display: flex;, margin-top: 15px;">
+            <div class="index-num" style="margin-right: 10px;, margin-left: 5px;">${detailImgObjList.length}</div>
+            <div style="margin-right: 10px;">파일명 :  ${detailImg.value}</div>
+            <button class="detailDeleteBtn" onclick="delete_obj(this)" style="border: none; color: red">삭제</button>
         </div>`);
         detailDeleteBtn.innerText = "삭제";
     }
 
     if(detailText.value.trim() !== ''){
         const detailTextObj = {
-            detail: detailText.value
+            detail: detailText.value,
+            type: "text/plain"
         };
         detailImgObjList.push(detailTextObj);
-        detailContainer.insertAdjacentHTML("beforeend", `<div className="details-list" id="${detailImgObjList.length}" style="display: flex; justify-content: space-between " >
-            <div class="index-num">${detailImgObjList.length}</div>
-            <div>상세내용 :  ${detailText.value}</div>
-            <button class="detailDeleteBtn" onclick="delete_obj(this)">삭제</button>
+        detailContainer.insertAdjacentHTML("beforeend", `
+        <div className="details-list" id="${detailImgObjList.length}" style="display: flex;, margin-top: 15px;">
+            <div class="index-num" style="margin-right: 10px;, margin-left: 5px;">${detailImgObjList.length}</div>
+            <div style="margin-right: 10px;">상세내용 :  ${detailText.value}</div>
+            <button class="detailDeleteBtn" onclick="delete_obj(this)" style="border: none; color: red">삭제</button>
         </div>`);
         detailDeleteBtn.innerText = "삭제";
-        num++;
     }
     detailText.value = "";
     detailImg.value = null;
@@ -125,12 +135,10 @@ addDetailsBtn.onclick = () => {
 }
 
 function delete_obj(button){
-    button.parentElement.remove();
     const id = button.parentElement.id;
     const detailListDivs = listCon.children;
-    console.log(detailListDivs)
-    detailImgObjList.splice(id, 1);
-
+    detailImgObjList.splice(id-1, 1);
+    button.parentElement.remove();
     for( let i = 0; i < detailListDivs.length; i++){
         detailListDivs[i].id = i + 1;
         const numberDiv = detailListDivs[i].querySelector('.index-num');

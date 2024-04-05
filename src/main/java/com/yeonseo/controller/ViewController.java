@@ -16,8 +16,11 @@ import java.util.List;
 
 @Controller
 public class ViewController {
+    @Autowired ProjectService projectService;
+
     @GetMapping("/home")
     public void view_home(){}
+
 }
 
 

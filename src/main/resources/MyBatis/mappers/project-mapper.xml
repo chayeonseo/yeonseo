@@ -4,14 +4,20 @@
 <mapper namespace="com.yeonseo.mapper.ProjectMapper">
 
     <resultMap id="get_project" type="projectDTO" autoMapping="true">
-        <id property="id" column="project_id"/>
+        <id property="id" column="projectId"/>
+
+        <association property="thumbImage" javaType="ProjectDetailDTO">
+            <id property="detail" column="thumbImage"/>
+        </association>
+
         <association property="category" javaType="CategoryDTO">
-            <id property="name" column="category_name" />
+            <id property="id" column="CategoryId"/>
+            <result property="name" column="categoryName" />
         </association>
 
         <association property="createUser" javaType="UserDTO" autoMapping="true">
-            <id property="id" column="create_user_id"/>
-            <result  property="name" column="create_user_name" />
+            <id property="id" column="createUserId"/>
+            <result  property="name" column="createUserName" />
         </association>
 
 
@@ -22,13 +28,22 @@
         </collection>
 
         <collection property="members" ofType="UserDTO" javaType="list" autoMapping="true">
-            <id property="id" column="member_user_id"/>
-            <result  property="name" column="member_user_name" />
+            <id property="id" column="memberUserId"/>
+            <result  property="name" column="memberUserName" />
         </collection>
     </resultMap>
 
+    <resultMap id="insert_project" type="projectDTO" autoMapping="true">
+
+    </resultMap>
+
     <select id="get_project" resultMap="get_project">
-        SELECT * FROM project P
+        SELECT *,
+            P.id AS projectId, C.name AS categoryName,
+            U.id AS createUserId, U.name AS createUserName,
+            MU.id AS memberUserId, MU.name AS memberUserName,
+            D.no AS detailNo, C.id AS categoryId
+        FROM project P
             inner join category C
             on P.category_id = C.id
             inner join user U
@@ -50,9 +65,17 @@
 
     <insert id="insert_project" parameterType="com.yeonseo.dto.ProjectDTO">
         INSERT INTO `gather`.`project`
-        (`title`, `category_id`, `goal`, `summary`, `price`, `delivery`, `status`, `startDate`, `endDate`)
+        (`title`, `category_id`, `thumbImage`, `goal`, `summary`, `price`, `delivery`, `status`, `startDate`, `endDate`)
         VALUES
-        (#{title}, #{category.id}, #{goal}, #{summary}, #{price}, #{delivery}, #{status}, #{startDate}, #{endDate}) ;
+        (#{title}, #{category.id}, #{thumbImage.detail}, #{goal}, #{summary}, #{price}, #{delivery}, #{status}, #{startDate}, #{endDate}) ;
+    </insert>
+
+    <insert id="insert_project_details" parameterType="com.yeonseo.dto.ProjectDetailDTO">
+        <selectKey resultType="int" order="BEFORE" keyProperty="projectId">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO `details` VALUES
+        (NULL, #{projectId}, #{detail} , #{order},  #{type})
     </insert>
 
 </mapper>

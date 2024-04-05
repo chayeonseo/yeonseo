@@ -179,10 +179,11 @@
 
 .product-img{
     width: 500px;
-    height: 300px;
+    height: 350px;
     background-image: url("/static/image/main.jpg");
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .product-info{
@@ -192,7 +193,7 @@
     padding-left: 10px;
     padding-right: 10px;
     width: 400px;
-    height: 300px;
+    height: 350px;
     margin-left: 30px;
 }
 
@@ -207,7 +208,7 @@
 .product-sum{
     padding-left: 5px;
     padding-right: 5px;
-    height: 100px;
+    height: 130px;
     background-color: rgba(231, 231, 231, 0.59);
     overflow: auto;
 }
@@ -224,14 +225,27 @@
 
 .product-price{
     margin-top: 10px;
+    font-size: 1.5rem;
 }
 
-.product-price, .product-member > span{
-    font-size: 1.4rem;
+.product-price > span+span{
+    font-size: 1.1rem;
 }
 
-.product-price > span+span, .product-member > span+span{
+.product-goal > span{
+    font-size: 1.3rem;
+}
+
+.product-goal > span+span{
     font-size: 1rem;
+}
+
+.product-member > span{
+    font-size: 1rem;
+}
+
+#num{
+    color: #ad2b00;
 }
 
 .reward-title{

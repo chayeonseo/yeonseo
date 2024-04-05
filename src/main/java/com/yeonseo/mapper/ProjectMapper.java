@@ -1,6 +1,7 @@
 package com.yeonseo.mapper;
 
 import com.yeonseo.dto.ProjectDTO;
+import com.yeonseo.dto.ProjectDetailDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -16,4 +17,5 @@ public interface ProjectMapper {
     void like_project(int projectId, String userId);
 
     void insert_project(ProjectDTO projectDTO);
+    void insert_project_details(ProjectDetailDTO detailDTO);
 }

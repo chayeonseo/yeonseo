@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+button:hover{
+    cursor: pointer;
+}
+
 .product-view{
     margin: 0 auto;
     width:70%;
@@ -241,6 +245,15 @@ input{
     border: none;
     background-color: #fae4e4;
     margin-top: 10px;
+}
+
+.details-list{
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.details-list > div {
+    margin-top: 8px;
 }
 
 .date-select{
