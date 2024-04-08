@@ -19,7 +19,11 @@ public class ViewController {
     @Autowired ProjectService projectService;
 
     @GetMapping("/home")
-    public void view_home(){}
+    public String view_home(Model model){
+        model.addAttribute("projects", projectService.view_home());
+        return "home";
+    }
+
 
 }
 

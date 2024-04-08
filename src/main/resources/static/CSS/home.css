@@ -180,7 +180,7 @@
 }
 
 .ad-section{
-    height: 30%;
+    height: 35%;
     width: auto;
     border: 0.3px solid blueviolet;
 }
@@ -219,11 +219,16 @@
 }
 
 .card-wrapper{
-    display: flex;
-    padding: 10px 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 100%;
+    gap: 10px;
 }
 
 .recommend-cards{
+    display: flex;
+    flex-direction: column;
     height: 100%;
 }
 
@@ -239,17 +244,10 @@
     height: 100%;
 }
 
-.card-wrapper{
-    height: 40%;
-    display: flex;
-    justify-content: space-between;
-}
 
 .card{
     display: flex;
     flex-direction: column;
-    width: 23%;
-    height: 100%;
 }
 
 .card-image{
@@ -281,9 +279,6 @@
     font-weight: bold;
 }
 
-.popular-card-wrapper-section{
-    height: 90%;
-}
 
 .popular-card-wrapper{
     padding: 5px 5px 0 5px;

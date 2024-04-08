@@ -94,13 +94,13 @@
         </div>
         <div class="main-content">
             <div class="top-product">
-                <div class="product-img" th:style="'background-image: url(\'' + ${project.thumbImage.detail} + '\')'"></div>
+                <div class="product-img" th:style="'background-image: url(\'' + ${project.thumbImage} + '\')'"></div>
                 <div class="product-info">
                     <div class="product-title" th:text="${project.title}">[고양이의 하루]</div>
                     <div class="product-sum"  th:text="${project.summary}">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa집사가 내는 소리에 집중하고 대답해주는 수다냥이! 야옹 이외에도 purring(골골송), trilling 등의 긍정음을 자주 낸다면? 우리집 고양이가 행복하다는 증거로 볼 수 있어요.</div>
                     <div class="product-price"><span th:text="${project.price}">10,000</span><span> 원</span></div>
                     <div class="product-goal"><span th:text="${project.goal}">100</span><span> 명 모집 중 !</span></div>
-                    <div class="product-member"><span> 현재</span><span id="num"> 100</span><span>명이 참여했어요</span></div>
+                    <div class="product-member"><span> 현재 </span><span id="num" th:text="${project.count}"> 100</span><span>명이 참여했어요</span></div>
 
                     <div>
                         <span class="reward-title"> 리워드</span>
@@ -110,7 +110,6 @@
                         <button class="like-btn"><i class="fa-solid fa-heart"></i></button>
                         <button class="join">멤버로 참여하기</button>
                     </div>
-
                 </div>
             </div>
             <div class="detail-section">
@@ -119,7 +118,17 @@
                     도서산간에 해당하는 멤버님은 반드시 메이커에게 문의 후 참여해주세요
                 </div>
                 <div class="product-detail">
-                    <div th:each="detail:${project.details}"></div>
+                    <div th:each="detail : ${project.details}" class="detail-data">
+                        <th:block th:if="${detail.type == 'image/jpeg'}">
+                            <img th:src="${detail.detail}" alt="">
+                        </th:block>
+                        <th:block th:if="${detail.type == 'image/png'}">
+                            <img th:src="${detail.detail}" alt="">
+                        </th:block>
+                        <th:block th:if="${detail.type == 'text/plain'}">
+                            <div th:text="${detail.detail}" class="detail-text"></div>
+                        </th:block>
+                    </div>
                 </div>
             </div>
         </div>

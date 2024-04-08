@@ -12,7 +12,9 @@ class YeonseoApplicationTests {
 
     @Test
     void contextLoads() {
-        System.out.println(projectMapper.get_project(1));
+        System.out.println(projectMapper.view_home().get(0));
     }
+
+
 
 }

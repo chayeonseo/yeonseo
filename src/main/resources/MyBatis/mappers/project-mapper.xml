@@ -6,10 +6,6 @@
     <resultMap id="get_project" type="projectDTO" autoMapping="true">
         <id property="id" column="projectId"/>
 
-        <association property="thumbImage" javaType="ProjectDetailDTO">
-            <id property="detail" column="thumbImage"/>
-        </association>
-
         <association property="category" javaType="CategoryDTO">
             <id property="id" column="CategoryId"/>
             <result property="name" column="categoryName" />
@@ -25,6 +21,7 @@
             <id property="no" column="no"/>
             <result property="detail" column="detail"/>
             <result property="order" column="order"/>
+            <result property="type" column="type"/>
         </collection>
 
         <collection property="members" ofType="UserDTO" javaType="list" autoMapping="true">
@@ -33,16 +30,24 @@
         </collection>
     </resultMap>
 
-    <resultMap id="insert_project" type="projectDTO" autoMapping="true">
-
+    <resultMap id="view_home" type="ProjectDTO" autoMapping="true">
+        <association property="category" javaType="CategoryDTO">
+            <id property="id" column="category_id"/>
+            <result property="name" column="category_name"/>
+        </association>
+        <collection property="members" ofType="MemberDTO" javaType="list">
+            <id property="projectId" column="m_project_id"/>
+            <id property="userId" column="member"/>
+        </collection>
     </resultMap>
 
     <select id="get_project" resultMap="get_project">
         SELECT *,
             P.id AS projectId, C.name AS categoryName,
             U.id AS createUserId, U.name AS createUserName,
-            MU.id AS memberUserId, MU.name AS memberUserName,
-            D.no AS detailNo, C.id AS categoryId
+            D.no AS detailNo, C.id AS categoryId,
+            (SELECT count(*) FROM gather.member
+        where project_id = #{projectId}) AS count
         FROM project P
             inner join category C
             on P.category_id = C.id
@@ -50,10 +55,6 @@
             on P.create_user = U.id
             left outer join details D
             on P.id = D.project_id
-            left outer join member M
-            on P.id = M.project_id
-            left outer join user MU
-            on MU.id = M.user_id
         where p.id = #{projectId}
         order by D.order;
     </select>
@@ -67,15 +68,27 @@
         INSERT INTO `gather`.`project`
         (`title`, `category_id`, `thumbImage`, `goal`, `summary`, `price`, `delivery`, `status`, `startDate`, `endDate`)
         VALUES
-        (#{title}, #{category.id}, #{thumbImage.detail}, #{goal}, #{summary}, #{price}, #{delivery}, #{status}, #{startDate}, #{endDate}) ;
+        (#{title}, #{category.id}, #{thumbImage}, #{goal}, #{summary}, #{price}, #{delivery}, #{status}, #{startDate}, #{endDate}) ;
     </insert>
 
-    <insert id="insert_project_details" parameterType="com.yeonseo.dto.ProjectDetailDTO">
-        <selectKey resultType="int" order="BEFORE" keyProperty="projectId">
+    <insert id="insert_project_details">
+        <selectKey resultType="int" order="BEFORE" keyProperty="id">
             SELECT LAST_INSERT_ID()
         </selectKey>
         INSERT INTO `details` VALUES
-        (NULL, #{projectId}, #{detail} , #{order},  #{type})
+        <foreach collection="details" item="projectDetail" separator=",">
+            (NULL, #{id}, #{projectDetail.detail} , #{projectDetail.order},  #{projectDetail.type})
+        </foreach>
     </insert>
+
+    <select id="view_home" resultMap="view_home">
+        SELECT
+        title, thumbImage, goal, c.name as category_name, category_id, M.project_id as m_project_id, M.user_id as member
+        FROM project P
+        inner join category C
+        on P.category_id = C.id
+        left outer join member M
+        on P.id = M.project_id;
+    </select>
 
 </mapper>

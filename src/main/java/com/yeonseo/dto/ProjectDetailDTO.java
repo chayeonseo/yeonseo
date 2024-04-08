@@ -5,7 +5,7 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-@ToString(exclude = "detail")
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProjectDetailDTO {

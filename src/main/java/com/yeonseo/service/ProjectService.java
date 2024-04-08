@@ -15,7 +15,7 @@ public class ProjectService {
     @Autowired
     ProjectMapper projectMapper;
 
-    public List<ProjectDTO> view_project(){return projectMapper.view_project();};
+    public List<ProjectDTO> view_home(){return projectMapper.view_home();};
 
     public ProjectDTO get_project(int projectId){
         return projectMapper.get_project(projectId);
@@ -32,8 +32,6 @@ public class ProjectService {
         // 프로젝트 하나 insert
         projectMapper.insert_project(projectDTO);
         // 프로젝트 detail insert
-        for(ProjectDetailDTO detailDTO : projectDTO.getDetails()){
-            projectMapper.insert_project_details(detailDTO);
-        }
+        projectMapper.insert_project_details(projectDTO);
     };
 }

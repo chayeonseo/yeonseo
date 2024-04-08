@@ -5,8 +5,8 @@
     <title>home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="../static/js/login.js" defer></script>
-    <link rel="stylesheet" href="../static/CSS/login.css" >
+    <script th:src="@{/js/login.js}" defer></script>
+    <link rel="stylesheet" th:href="@{/CSS/login.css}" >
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
 </head>
 <body>
@@ -20,9 +20,9 @@
                         <button class="login-btn">로그인 하기</button>
                         <div class="user-button-wrapper">
                             <div class="user-button">
-                                <a href=""><img src="../static/image/heart.png"/></a>
-                                <a href=""><img src="../static/image/user.png"/></a>
-                                <a href=""><img src="../static/image/customer-support.png"/></a>
+                                <a href="home.html"><img th:src="@{/image/heart.png}" src="../static/image/heart.png"/></a>
+                                <a href="maker-page.html"><img th:src="@{/image/user.png}"></a>
+                                <a href="service.html"><img th:src="@{/image/customer-support.png}"></a>
                             </div>
                         </div>
                     </div>
@@ -104,11 +104,11 @@
                 </div>
 
                 <div class="login_path">
-                    <a th:href="@{/oauth2/authorization/kakao}" ><img id="kakao" th:src="@{book}" src="../../static/image/kakao_login_medium_narrow.png"/></a>
-                    <a th:href="@{/oauth2/authorization/google}" ><img id="google" th:src="@{book}" src="../../static/image/google_login.png"/></a>
+                    <a th:href="@{/oauth2/authorization/kakao}" ><img id="kakao" th:src="@{/image/kakao_login_medium_narrow.png}"/></a>
+                    <a th:href="@{/oauth2/authorization/google}" ><img id="google" th:src="@{/image/google_login.png}"/></a>
                 </div>
                 <div class="login_path">
-                    <a th:href="@{/oauth2/authorization/naver}" ><img id="naver" th:src="@{book}" src="../../static/image/btnG_완성형.png"/></a>
+                    <a th:href="@{/oauth2/authorization/naver}" ><img id="naver" th:src="@{/image/btnG_완성형.png}"/></a>
                     <a href="join.html"><button id="join">회원가입하기</button></a>
                 </div>
             </form>

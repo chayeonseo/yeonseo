@@ -8,6 +8,7 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <script th:src="@{/js/home.js}" defer></script>
     <link rel="stylesheet" th:href="@{/CSS/home.css}">
+    <link rel="stylesheet" href="../static/CSS/home.css">
 
 <body>
     <div class="home-view">
@@ -21,9 +22,9 @@
                         <button class="login-btn">로그인 하기</button>
                         <div class="user-button-wrapper">
                             <div class="user-button">
-                                <a href=""><img src="../static/image/heart.png"/></a>
-                                <a href=""><img src="../static/image/user.png"/></a>
-                                <a href=""><img src="../static/image/customer-support.png"/></a>
+                                <a href="home.html"><img th:src="@{/image/heart.png}" src="../static/image/heart.png"/></a>
+                                <a href="maker-page.html"><img th:src="@{/image/user.png}"></a>
+                                <a href="service.html"><img th:src="@{/image/customer-support.png}"></a>
                             </div>
                         </div>
                     </div>
@@ -104,15 +105,6 @@
                                         <li class="swiper-slide">
                                             <img src="/image/christmas_15.jpg">
                                         </li>
-                                        <li class="swiper-slide">
-                                            <img src="/image/christmas_16.jpg">
-                                        </li>
-                                        <li class="swiper-slide">
-                                            <img src="/image/christmas_17.jpg">
-                                        </li>
-                                        <li class="swiper-slide">
-                                            <img src="/image/christmas_18.jpg">
-                                        </li>
                                     </ul>
                                     <div class="swiper-button-next"></div>
                                     <div class="swiper-button-prev"></div>
@@ -189,8 +181,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="card-wrapper">
                                             <div class="card">
                                                 <div class="card-image"></div>
                                                 <div class="card-info">

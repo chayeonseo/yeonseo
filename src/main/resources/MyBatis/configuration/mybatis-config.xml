@@ -16,5 +16,6 @@
         <typeAlias type="com.yeonseo.dto.UserDTO" alias="UserDTO" />
         <typeAlias type="com.yeonseo.dto.CategoryDTO" alias="CategoryDTO" />
         <typeAlias type="com.yeonseo.dto.ProjectDetailDTO" alias="ProjectDetailDTO" />
+        <typeAlias type="com.yeonseo.dto.MemberDTO" alias="MemberDTO" />
     </typeAliases>
 </configuration>

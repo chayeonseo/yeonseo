@@ -12,10 +12,10 @@ import java.util.List;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProjectDTO         {
+public class ProjectDTO{
     private int id;
     private String title;
-    private ProjectDetailDTO thumbImage;
+    private String thumbImage;
     private CategoryDTO category;
     private int goal;
     private UserDTO createUser;
@@ -29,4 +29,5 @@ public class ProjectDTO         {
     private Date endDate;
     private List<ProjectDetailDTO> details;
     private List<UserDTO> members;
+    private int count;
 }
