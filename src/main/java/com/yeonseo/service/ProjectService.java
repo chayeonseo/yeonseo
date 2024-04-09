@@ -15,7 +15,15 @@ public class ProjectService {
     @Autowired
     ProjectMapper projectMapper;
 
-    public List<ProjectDTO> view_home(){return projectMapper.view_home();};
+    public List<ProjectDTO> view_home(){
+        List<ProjectDTO> result = projectMapper.view_home();
+        for (ProjectDTO a : result) {
+            a.setCount(a.getMembers().size());
+        }
+
+        System.out.println(result.get(0));
+        return projectMapper.view_home();
+    };
 
     public ProjectDTO get_project(int projectId){
         return projectMapper.get_project(projectId);

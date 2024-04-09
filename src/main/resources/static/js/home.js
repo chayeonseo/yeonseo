@@ -4,3 +4,5 @@ var advertisement_slide = new Swiper(".advertisement", {
     prevEl: ".swiper-button-prev",
     },
 });
+
+

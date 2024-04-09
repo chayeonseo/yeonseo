@@ -13,111 +13,113 @@
 
 </head>
 <body>
-<div class="join-view">
-  <div class="header">
-    <div class="header-wrapper">
-      <div class="header-upper">
-        <div class="logo-wrapper"></div>
-        <div class="user-wrapper">
-          <button class="start-project-btn">프로젝트 시작</button>
-          <button class="login-btn">로그인 하기</button>
-          <div class="user-button-wrapper">
-            <div class="user-button">
-              <a href=""><img src="../static/image/heart.png"/></a>
-              <a href=""><img src="../static/image/user.png"/></a>
-              <a href=""><img src="../static/image/customer-support.png"/></a>
+<form action="">
+  <div class="join-view">
+    <div class="header">
+      <div class="header-wrapper">
+        <div class="header-upper">
+          <div class="logo-wrapper"></div>
+          <div class="user-wrapper">
+            <button class="start-project-btn">프로젝트 시작</button>
+            <button class="login-btn">로그인 하기</button>
+            <div class="user-button-wrapper">
+              <div class="user-button">
+                <a href=""><img src="../static/image/heart.png"/></a>
+                <a href=""><img src="../static/image/user.png"/></a>
+                <a href=""><img src="../static/image/customer-support.png"/></a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div id="header-fixed">
+        <div class="categories">
+          <div class="cate-con">
+            <div id="category-bar"><i class="fi fi-br-menu-burger"></i></div>
+            <div class="category-select">
+              <div class="select-box">
+                <div>
+                  <img th:src="@{/image/tech.png}"/>
+                  <div>테크/가전</div>
+                </div>
+                <div>
+                  <img th:src="@{/image/beauty.png}" />
+                  <div>뷰티</div>
+                </div>
+                <div>
+                  <img th:src="@{/image/living.png}"/>
+                  <div>홈/리빙</div>
+                </div>
+              </div>
+              <div class="select-box">
+                <div>
+                  <img th:src="@{/image/outdoor.png}"/>
+                  <div>아웃도어</div>
+                </div>
+                <div>
+                  <img th:src="@{/image/food.png}"/>
+                  <div>푸드</div>
+                </div>
+                <div>
+                  <img th:src="@{/image/book.png}"/>
+                  <div>도서</div>
+                </div>
+              </div>
+              <div class="select-box">
+                <div>
+                  <img th:src="@{/image/pet.png}"
+                  />
+                  <div>반려동물</div>
+                </div>
+                <div>
+                  <img th:src="@{/image/kids.png}"/>
+                  <div>키즈</div>
+                </div>
+                <div>
+                  <img th:src="@{/image/game.png}"/>
+                  <div>게임</div>
+                </div>
+
+
+
+              </div>
+            </div>
+          </div>        <div id="category-home">홈</div>
+          <div id="category-popular">인기</div>
+          <div id="category-new">신규</div>
+          <div id="category-closing">마감임박</div>
+        </div>
+        <div class="search-section">
+          <input type="text">
+          <button id="search-btn">검색</button>
+        </div>
+      </div>
     </div>
-    <div id="header-fixed">
-      <div class="categories">
-        <div class="cate-con">
-          <div id="category-bar"><i class="fi fi-br-menu-burger"></i></div>
-          <div class="category-select">
-            <div class="select-box">
-              <div>
-                <img th:src="@{/image/tech.png}"/>
-                <div>테크/가전</div>
-              </div>
-              <div>
-                <img th:src="@{/image/beauty.png}" />
-                <div>뷰티</div>
-              </div>
-              <div>
-                <img th:src="@{/image/living.png}"/>
-                <div>홈/리빙</div>
-              </div>
-            </div>
-            <div class="select-box">
-              <div>
-                <img th:src="@{/image/outdoor.png}"/>
-                <div>아웃도어</div>
-              </div>
-              <div>
-                <img th:src="@{/image/food.png}"/>
-                <div>푸드</div>
-              </div>
-              <div>
-                <img th:src="@{/image/book.png}"/>
-                <div>도서</div>
-              </div>
-            </div>
-            <div class="select-box">
-              <div>
-                <img th:src="@{/image/pet.png}"
-                />
-                <div>반려동물</div>
-              </div>
-              <div>
-                <img th:src="@{/image/kids.png}"/>
-                <div>키즈</div>
-              </div>
-              <div>
-                <img th:src="@{/image/game.png}"/>
-                <div>게임</div>
-              </div>
+    <div class="wrap">
+      <h3>JOIN</h3>
+      <form id="signup-form" th:action="@{/user/join}" method="post" enctype="multipart/form-data">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
 
+        <div class="input_wrap">
 
+          <input class="login_input" id="email-input" th:name="email" type="text" placeholder="email"/>
+          <input class="login_input" id="id-input" th:name="id" type="text" placeholder="ID"/>
+          <input class="login_input" id="pw-input" th:name="password" type="password" placeholder="password"/>
+          <input class="login_input" id="pw-check-input" type="password" th:name="password" placeholder="password-check"/>
+          <input class="login_input" id="image-input" th:name="imageFile" type="file" placeholder="프로필 사진"/>
+          <input id="join_btn" type="submit" value="JOIN">
+          <input id="cert_btn" type="button" value="본인인증하기">
+        </div>
 
-            </div>
-          </div>
-        </div>        <div id="category-home">홈</div>
-        <div id="category-popular">인기</div>
-        <div id="category-new">신규</div>
-        <div id="category-closing">마감임박</div>
-      </div>
-      <div class="search-section">
-        <input type="text">
-        <button id="search-btn">검색</button>
-      </div>
-    </div>
-  </div>
-  <div class="wrap">
-    <h3>JOIN</h3>
-    <form id="signup-form" th:action="@{/user/join}" method="post" enctype="multipart/form-data">
-      <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
-
-      <div class="input_wrap">
-
-        <input class="login_input" th:name="email" type="text" placeholder="email" th:if="${session.snsUser != null}" th:value="${session.snsUser.email}"/>
-        <input class="login_input" th:name="id" type="text" placeholder="ID"/>
-        <input class="login_input" th:name="password" type="password" placeholder="password"/>
-        <input class="login_input" type="password" th:name="password" placeholder="password-check"/>
-        <input class="login_input" th:name="tel" type="tel" placeholder="phone_number"/>
-        <input class="login_input" th:name="imageFile" type="file" placeholder="프로필 사진"/>
-        <input id="join_btn" type="submit" value="JOIN">
-        <input id="cert_btn" type="button" value="본인인증하기">
-      </div>
-
-      <p>
-        이미 회원이신가요?
-        <a href="login.html">로그인으로 돌아가기  &rarr;</a>
-      </p>
+        <p>
+          이미 회원이신가요?
+          <a href="login.html">로그인으로 돌아가기  &rarr;</a>
+        </p>
         <input type="hidden" id="user-ci" th:name="ci">
-    </form>
+      </form>
+    </div>
   </div>
-</div>
+</form>
+
 </body>
 </html>

@@ -9,7 +9,7 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
-@ToString
+@ToString(exclude = "thumbImage")
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProjectDTO{
