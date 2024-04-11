@@ -116,119 +116,7 @@
                                 <div class="recommend-cards">
                                     <div class="recommend-title">주목할 만한 프로덕트</div>
                                     <div class="card-wrapper-section">
-                                        <div class="card-wrapper" th:each="">
-                                            <div class="card">
-                                                <div class="card-image"></div>
-                                                <div class="card-info">
-                                                    <dl>
-                                                        <dd class="product-sub-info">
-                                                            <span>카테고리명 a태그</span>
-                                                        </dd>
-                                                        <dt>
-                                                            <a href="">프로덕트 명</a>
-                                                        </dt>
-                                                    </dl>
-                                                    <div class="gather-status">
-                                                        <span>00/100명 모집</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-image"></div>
-                                                <div class="card-info">
-                                                    <dl>
-                                                        <dd class="product-sub-info">
-                                                            <span>카테고리명 a태그</span>
-                                                        </dd>
-                                                        <dt>
-                                                            <a href="">프로덕트 명</a>
-                                                        </dt>
-                                                    </dl>
-                                                    <div class="gather-status">
-                                                        <span>00/100명 모집</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-image"></div>
-                                                <div class="card-info">
-                                                    <dl>
-                                                        <dd class="product-sub-info">
-                                                            <span>카테고리명 a태그</span>
-                                                        </dd>
-                                                        <dt>
-                                                            <a href="">프로덕트 명</a>
-                                                        </dt>
-                                                    </dl>
-                                                    <div class="gather-status">
-                                                        <span>00/100명 모집</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-image"></div>
-                                                <div class="card-info">
-                                                    <dl>
-                                                        <dd class="product-sub-info">
-                                                            <span>카테고리명 a태그</span>
-                                                        </dd>
-                                                        <dt>
-                                                            <a href="">프로덕트 명</a>
-                                                        </dt>
-                                                    </dl>
-                                                    <div class="gather-status">
-                                                        <span>00/100명 모집</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-image"></div>
-                                                <div class="card-info">
-                                                    <dl>
-                                                        <dd class="product-sub-info">
-                                                            <span>카테고리명 a태그</span>
-                                                        </dd>
-                                                        <dt>
-                                                            <a href="">프로덕트 명</a>
-                                                        </dt>
-                                                    </dl>
-                                                    <div class="gather-status">
-                                                        <span>00/100명 모집</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-image"></div>
-                                                <div class="card-info">
-                                                    <dl>
-                                                        <dd class="product-sub-info">
-                                                            <span>카테고리명 a태그</span>
-                                                        </dd>
-                                                        <dt>
-                                                            <a href="">프로덕트 명</a>
-                                                        </dt>
-                                                    </dl>
-                                                    <div class="gather-status">
-                                                        <span>00/100명 모집</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-image"></div>
-                                                <div class="card-info">
-                                                    <dl>
-                                                        <dd class="product-sub-info">
-                                                            <span>카테고리명 a태그</span>
-                                                        </dd>
-                                                        <dt>
-                                                            <a href="">프로덕트 명</a>
-                                                        </dt>
-                                                    </dl>
-                                                    <div class="gather-status">
-                                                        <span>00/100명 모집</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="card-wrapper">
                                             <div class="card">
                                                 <div class="card-image"></div>
                                                 <div class="card-info">
@@ -254,139 +142,22 @@
                             <div class="popular-content-title">인기 프로젝트</div>
                             <div class="popular-card-wrapper-section">
                                 <div class="popular-card-wrapper">
-                                    <div class="popular-card">
-                                        <div class="popular-card-image"></div>
+                                    <div class="popular-card"
+                                         th:each="project : ${projects}"
+                                         th:with="productImg = ${project.thumbImage}">
+                                        <div class="popular-card-image" th:style="'background-image: url(\'' + ${productImg} + '\')'"></div>
                                         <div class="rank">1</div>
                                         <div class="populat-card-info">
                                             <dl>
                                                 <dd class="product-sub-info">
-                                                    <span>카테고리명 a태그</span>
+                                                    <span th:text="${project.category.name}"></span>
                                                 </dd>
                                                 <dt>
-                                                    <a href="">프로덕트 명</a>
+                                                    <a href="|/project/${project.id}|" th:text="${project.title}">프로덕트 명</a>
                                                 </dt>
                                             </dl>
                                             <div class="gather-status">
-                                                <span>00/100명 모집</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="popular-card">
-                                        <div class="popular-card-image"></div>
-                                        <div class="rank">2</div>
-                                        <div class="populat-card-info">
-                                            <dl>
-                                                <dd class="product-sub-info">
-                                                    <span>카테고리명 a태그</span>
-                                                </dd>
-                                                <dt>
-                                                    <a href="">프로덕트 명</a>
-                                                </dt>
-                                            </dl>
-                                            <div class="gather-status">
-                                                <span>00/100명 모집</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="popular-card">
-                                        <div class="popular-card-image"></div>
-                                        <div class="rank">3</div>
-                                        <div class="populat-card-info">
-                                            <dl>
-                                                <dd class="product-sub-info">
-                                                    <span>카테고리명 a태그</span>
-                                                </dd>
-                                                <dt>
-                                                    <a href="">프로덕트 명</a>
-                                                </dt>
-                                            </dl>
-                                            <div class="gather-status">
-                                                <span>00/100명 모집</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="popular-card">
-                                        <div class="popular-card-image"></div>
-                                        <div class="rank">4</div>
-                                        <div class="populat-card-info">
-                                            <dl>
-                                                <dd class="product-sub-info">
-                                                    <span>카테고리명 a태그</span>
-                                                </dd>
-                                                <dt>
-                                                    <a href="">프로덕트 명</a>
-                                                </dt>
-                                            </dl>
-                                            <div class="gather-status">
-                                                <span>00/100명 모집</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="popular-card">
-                                        <div class="popular-card-image"></div>
-                                        <div class="rank">5</div>
-                                        <div class="populat-card-info">
-                                            <dl>
-                                                <dd class="product-sub-info">
-                                                    <span>카테고리명 a태그</span>
-                                                </dd>
-                                                <dt>
-                                                    <a href="">프로덕트 명</a>
-                                                </dt>
-                                            </dl>
-                                            <div class="gather-status">
-                                                <span>00/100명 모집</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="popular-card">
-                                        <div class="popular-card-image"></div>
-                                        <div class="rank">6</div>
-                                        <div class="populat-card-info">
-                                            <dl>
-                                                <dd class="product-sub-info">
-                                                    <span>카테고리명 a태그</span>
-                                                </dd>
-                                                <dt>
-                                                    <a href="">프로덕트 명</a>
-                                                </dt>
-                                            </dl>
-                                            <div class="gather-status">
-                                                <span>00/100명 모집</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="popular-card">
-                                        <div class="popular-card-image"></div>
-                                        <div class="rank">7</div>
-                                        <div class="populat-card-info">
-                                            <dl>
-                                                <dd class="product-sub-info">
-                                                    <span>카테고리명 a태그</span>
-                                                </dd>
-                                                <dt>
-                                                    <a href="">프로덕트 명</a>
-                                                </dt>
-                                            </dl>
-                                            <div class="gather-status">
-                                                <span>00/100명 모집</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="popular-card">
-                                        <div class="popular-card-image"></div>
-                                        <div class="rank">8</div>
-                                        <div class="popular-card-info">
-                                            <dl>
-                                                <dd class="product-sub-info">
-                                                    <span>카테고리명 a태그</span>
-                                                </dd>
-                                                <dt>
-                                                    <a href="">프로덕트 명</a>
-                                                </dt>
-                                            </dl>
-                                            <div class="gather-status">
-                                                <span>00/100명 모집</span>
+                                                <span th:text="${project.members.size()}">00</span><span>/</span><span th:text="${project.goal}">100</span><span>명 모집</span>
                                             </div>
                                         </div>
                                     </div>

@@ -12,8 +12,10 @@ public class UserService {
     private UserMapper userMapper;
 
     public void join_user(UserDTO userDTO) {
+
         userMapper.join_user(userDTO);
     }
+
 
     @GetMapping("/join")
     public void user_join(){}

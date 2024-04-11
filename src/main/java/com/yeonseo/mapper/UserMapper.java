@@ -9,4 +9,6 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
     void join_user(UserDTO userDTO);
+
+    UserDTO get_user(String username);
 }

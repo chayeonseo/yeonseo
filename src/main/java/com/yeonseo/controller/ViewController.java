@@ -21,6 +21,7 @@ public class ViewController {
     @GetMapping("/home")
     public String view_home(Model model){
         model.addAttribute("projects", projectService.view_home());
+//        System.out.println(model);
         return "home";
     }
 

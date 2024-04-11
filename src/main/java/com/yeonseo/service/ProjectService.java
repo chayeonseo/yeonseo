@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -21,15 +22,30 @@ public class ProjectService {
             a.setCount(a.getMembers().size());
         }
 
-        System.out.println(result.get(0));
-        return projectMapper.view_home();
+        result.sort(new Comparator<ProjectDTO>() {
+            @Override
+            public int compare(ProjectDTO o1, ProjectDTO o2) {
+                return o2.getCount() - o1.getCount();
+            }
+        });
+
+//        result.forEach(x -> {
+//            System.out.println(x.getId());
+//            System.out.println(x.getCount());
+//            System.out.println();
+//
+//        });
+
+        System.out.println("a:" +result.size());
+        List<ProjectDTO> subResult = result.subList(0, 8);
+
+        System.out.println("b:" +subResult.size());
+        return subResult;
     };
 
     public ProjectDTO get_project(int projectId){
         return projectMapper.get_project(projectId);
     }
-
-
 
     public void like_project(int projectId, String userId){
         projectMapper.like_project(projectId, userId);
